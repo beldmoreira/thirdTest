@@ -23,7 +23,7 @@ public class CandidateService {
         validarNome(name);
 
         var candidate = new Candidate();
-        candidate.id = id;
+        candidate.id = 1000;
         candidate.name = name;
         candidate.status = RECEBIDO;
         info.put(candidate.id,candidate);
@@ -72,7 +72,7 @@ public class CandidateService {
         validarId(codCandidato);
         var candidato = info.get(codCandidato);
         if(!candidato.status.equals(QUALIFICADO)){
-            throw new Exception("Candidato não encontrado");
+            throw new NotFoundException("Candidato não encontrado");
         }
         candidato.status = APROVADO;
     }
