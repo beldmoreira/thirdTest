@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@CrossOrigin(origins = "http://localhost:8080")
 @RequestMapping(value = "/api/v1/hiring")
 public class CandidateController {
     @Autowired

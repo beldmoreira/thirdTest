@@ -15,7 +15,7 @@ public class CandidateService {
     public static final String APROVADO = "Aprovado";
     public static final String RECEBIDO = "Recebido";
     public static final String QUALIFICADO = "Qualificado";
-    public int id;
+    public int id = 1000;
 
     public HashMap<Integer, Candidate> info = new HashMap<>();
 
@@ -23,7 +23,7 @@ public class CandidateService {
         validarNome(name);
 
         var candidate = new Candidate();
-        candidate.id = 1000;
+        candidate.id = id;
         candidate.name = name;
         candidate.status = RECEBIDO;
         info.put(candidate.id,candidate);
@@ -41,7 +41,6 @@ public class CandidateService {
             }
         }
     }
-
     public void marcarEntrevista(int codCandidato) throws Exception {
         validarId(codCandidato);
         var candidato = info.get(codCandidato);
